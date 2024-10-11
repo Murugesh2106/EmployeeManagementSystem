@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/your/styles.css"> <!-- Link to your CSS file -->
+    <style>
+        .text-purple-lavender {
+            background: linear-gradient(45deg, #800080, #E6E6FA); /* Purple to Lavender gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .coral-peach {
+            background: linear-gradient(45deg, #FF7F50, #FFDAB9); /* Coral to Light Peach gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+
+    </style>
+    <title>Employee Attendance Management System</title>
+</head>
+<body class="bg-dark text-light">
+    <div class="text-center container-fluid min-vh-100">
+        <h1 class="display-4 text-purple-lavender">Welcome to the Employee Attendance Management System</h1>
+        <p class="lead text-purple-lavender">Manage employee records and track attendance seamlessly.</p>
+        <hr />
+        <div class="container mt-5 ">
+            <div class="row justify-content-center">
+                <div class="col-md-4 bg-info text-dark m-2 rounded-3">
+                    <div class="card bg-info text-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Employee Management</h5>
+                            <p class="card-text">Add, update, and manage employee details efficiently.</p>
+                            <a href="@Url.Action("Index", "Employees")" class="btn btn-dark text-info">Manage Employees</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 bg-info text-dark m-2 rounded-3">
+                    <div class="card bg-info text-dark">
+                        <div class="card-body">
+                            <h5 class="card-title">Attendance Records</h5>
+                            <p class="card-text">Track employee check-in and check-out times.</p>
+                            <a href="@Url.Action("Index", "Attendances")" class="btn btn-dark text-info">View Attendance</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

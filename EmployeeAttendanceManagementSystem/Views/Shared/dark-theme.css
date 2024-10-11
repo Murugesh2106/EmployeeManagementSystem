@@ -1,0 +1,60 @@
+﻿body {
+    background-color: #1e1e2f;
+    color: #c5c6c7;
+    font-family: Arial, sans-serif;
+}
+
+a.nav-link {
+    color: #66fcf1 !important;
+}
+
+    a.nav-link:hover {
+        color: #45a29e !important;
+    }
+
+.navbar {
+    background-color: #0b0c10;
+    border-bottom: 1px solid #45a29e;
+}
+
+.navbar-brand, .navbar-toggler-icon {
+    color: #66fcf1 !important;
+}
+
+.container {
+    background-color: #1f2833;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #0b0c10;
+    color: #66fcf1;
+    padding: 10px;
+}
+
+button, input[type="submit"] {
+    background-color: #45a29e;
+    color: #1f2833;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+    button:hover, input[type="submit"]:hover {
+        background-color: #66fcf1;
+    }
+
+input, select, textarea {
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    border: 1px solid #45a29e;
+}
+
+    input::placeholder, textarea::placeholder {
+        color: #c5c6c7;
+    }
+
+label {
+    color: #66fcf1;
+}

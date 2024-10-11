@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Attendance>
+
+@{
+    ViewData["Title"] = "Attendance List";
+}
+
+<!-- Dark background with light text -->
+<div class="container-fluid bg-dark text-light min-vh-100 py-4">
+    <h3>@ViewData["Title"]</h3>
+
+    <p>
+        <a asp-action="Create" class="btn btn-success btn-sm">Create New Attendance list</a>
+    </p>
+
+    <!-- Light background table with dark text -->
+    <table class="table table-bordered table-responsive table-hover bg-light text-dark">
+        <thead class="bg-secondary text-light">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.AttendanceId)</th>
+                <th>@Html.DisplayNameFor(model => model.Employees.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.Date)</th>
+                <th>@Html.DisplayNameFor(model => model.CheckInTime)</th>
+                <th>@Html.DisplayNameFor(model => model.CheckOutTime)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var attendance in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(Model => attendance.AttendanceId)</td>
+                        <td>@Html.DisplayFor(Model => attendance.Employees.Name)</td>
+                        <td>@Html.DisplayFor(Model => attendance.Date)</td>
+                        <td>@Html.DisplayFor(Model => attendance.CheckInTime)</td>
+                        <td>@Html.DisplayFor(Model => attendance.CheckOutTime)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@attendance.AttendanceId" class="btn btn-primary btn-sm">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@attendance.AttendanceId" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center">Attendance Details not available in database.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,46 @@
+﻿@model Attendance
+
+@{
+    ViewData["Title"] = "Delete Attendance List";
+}
+
+<!-- Dark background with light text -->
+<div class="container-fluid bg-dark text-light min-vh-100 py-4">
+    <h3>@ViewData["Title"]</h3>
+    <hr />
+
+    <!-- Light background form with dark text -->
+    <form asp-action="Delete" class="bg-light text-dark p-4 rounded shadow-sm">
+        <input type="hidden" asp-for="AttendanceId" />
+
+        <div class="mb-3">
+            <label class="control-label">Employee</label>
+            <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.Employees" disabled>
+                <option>--Select Employee--</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Date" class="control-label"></label>
+            <input asp-for="Date" class="form-control" readonly />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CheckInTime" class="control-label"></label>
+            <input asp-for="CheckInTime" class="form-control" readonly />
+            <span asp-validation-for="CheckInTime" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CheckOutTime" class="control-label"></label>
+            <input asp-for="CheckOutTime" class="form-control" readonly />
+            <span asp-validation-for="CheckOutTime" class="text-danger"></span>
+        </div>
+
+        <!-- Delete Button centered -->
+        <div class="text-center">
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+        </div>
+    </form>
+</div>
